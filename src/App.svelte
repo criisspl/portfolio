@@ -31,7 +31,8 @@
 
   <section id="sobre-mi" aria-labelledby="t-sobre-mi">
     <h2 id="t-sobre-mi">Sobre mí</h2>
-    {#each contenido.sobreMi as parrafo (parrafo)}
+    <!-- Clave por índice: lista estática y dos párrafos iguales harían fallar `each_key_duplicate`. -->
+    {#each contenido.sobreMi as parrafo, i (i)}
       <p><Texto texto={parrafo} /></p>
     {/each}
   </section>
