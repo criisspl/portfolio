@@ -17,17 +17,12 @@
 
 <style>
   section {
-    padding: 2rem 0;
+    padding: var(--espacio-8) 0;
   }
   h2 {
-    font-size: 1rem;
+    font-size: var(--titulo-2);
   }
   .prompt {
     color: var(--acento);
-  }
-  @media (min-width: 40rem) {
-    h2 {
-      font-size: 1.25rem;
-    }
   }
 </style>

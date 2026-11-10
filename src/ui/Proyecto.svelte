@@ -32,29 +32,30 @@
 <style>
   .tarjeta {
     background: var(--panel);
-    border: 4px solid var(--borde);
-    box-shadow: 6px 6px 0 var(--borde);
-    padding: 1.25rem;
+    border: var(--grosor-borde) solid var(--borde);
+    box-shadow: var(--sombra-pixel);
+    padding: var(--espacio-5);
   }
   h3 {
     color: var(--acento);
-    font-size: 1rem;
+    font-size: var(--pixel-s);
   }
   .etiquetas {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--espacio-2);
     list-style: none;
-    margin: 1rem 0;
+    margin: var(--espacio-4) 0;
     padding: 0;
   }
   .etiquetas li {
-    border: 2px solid var(--suave);
+    border: var(--grosor-fino) solid var(--suave);
     color: var(--suave);
     font-family: var(--pixel);
-    font-size: 0.75rem;
+    font-size: var(--pixel-s);
     line-height: 1.4;
-    padding: 0.3rem 0.5rem;
+    /* 0.3rem = 1.2 x espacio-1 (fuera de la escala, se conserva el aspecto) */
+    padding: calc(var(--espacio-1) * 1.2) var(--espacio-2);
   }
   .enlace {
     margin: 0;

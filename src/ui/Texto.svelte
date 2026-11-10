@@ -17,10 +17,10 @@
 <style>
   .marcador {
     color: var(--aviso);
-    border: 2px dashed var(--aviso);
+    border: var(--grosor-fino) dashed var(--aviso);
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    padding: 0 0.4rem;
+    padding: 0 var(--espacio-fino);
     overflow-wrap: anywhere;
   }
 </style>

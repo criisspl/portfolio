@@ -10,6 +10,58 @@
   --aviso: #ff9ec7;
   --pixel: "Press Start 2P", monospace;
   --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ESCALA DEL SISTEMA DE DISEÑO (todo valor de medida de los componentes sale de aquí).
+
+     Tipografía pixel (Press Start 2P): solo múltiplos de 8px (cuadrícula nativa de la fuente);
+     en otros tamaños se ve borrosa. Con la raíz en 16px: 1rem = 16px.
+     --pixel-s 16px · --pixel-m 24px · --pixel-l 32px
+     Tipografía mono (JetBrains Mono), en rem: --texto-xs 0.8 · --texto-md 1 · --texto-lg 1.125.
+     Espacio: base 0.25rem (4px), --espacio-N = N * 0.25rem. Escala: 1, 2, 3, 4, 5, 6, 8, 12, 16.
+     Bordes: --grosor-borde 4px (marcos, tarjeta, cabecera/pie) · --grosor-fino 2px (etiquetas, marcadores).
+     Breakpoint único: 40rem (640px). Las media queries no admiten var(), así que vive solo
+     en la media query de este fichero, que cambia los tokens de título; los componentes no
+     llevan media queries propias. */
+  --pixel-s: 1rem;
+  --pixel-m: 1.5rem;
+  --pixel-l: 2rem;
+  --texto-xs: 0.8rem;
+  --texto-md: 1rem;
+  --texto-lg: 1.125rem;
+
+  --espacio-1: 0.25rem;
+  --espacio-2: 0.5rem;
+  --espacio-3: 0.75rem;
+  --espacio-4: 1rem;
+  --espacio-5: 1.25rem;
+  --espacio-6: 1.5rem;
+  --espacio-8: 2rem;
+  --espacio-12: 3rem;
+  --espacio-16: 4rem;
+  --espacio-fino: 0.4rem; /* holgura de los marcadores y filas de contacto (fuera de la escala de 4px) */
+
+  --ancho-max: 48rem;
+  /* Margen de anclas bajo la cabecera fija. En móvil, con la fuente pixel a 16px, el menú no cabe
+     en una fila (400px > 390px) y pasa a dos (cabecera de 100px): se reserva más margen. */
+  --alto-cabecera: 7rem;
+  --grosor-borde: 4px;
+  --grosor-fino: 2px;
+  --sombra-pixel: 6px 6px 0 var(--borde);
+  --toque-min: 44px; /* diana táctil mínima */
+
+  /* Tamaños de título: móvil primero; el breakpoint los sube más abajo. */
+  --titulo-1: var(--pixel-m);
+  --titulo-2: var(--pixel-s);
+
+  color-scheme: dark;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --titulo-1: var(--pixel-l);
+    --titulo-2: var(--pixel-m);
+    --alto-cabecera: 4.5rem;
+  }
 }
 
 * {
@@ -18,15 +70,16 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;
+  scroll-padding-top: var(--alto-cabecera);
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   background: var(--fondo);
   color: var(--texto);
-  font: 1rem/1.7 var(--mono);
+  font: var(--texto-md)/1.7 var(--mono);
 }
 
 h1,
@@ -35,7 +88,7 @@ h3 {
   font-family: var(--pixel);
   font-weight: 400;
   line-height: 1.5;
-  margin: 0 0 1rem;
+  margin: 0 0 var(--espacio-4);
 }
 
 a {
@@ -44,7 +97,7 @@ a {
 
 :focus-visible {
   outline: 3px solid var(--acento);
-  outline-offset: 3px;
+  outline-offset: 3px; /* offset puntual del foco */
 }
 
 @media (prefers-reduced-motion: reduce) {
