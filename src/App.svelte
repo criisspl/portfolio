@@ -23,7 +23,7 @@
   </nav>
 </header>
 
-<main id="contenido">
+<main id="contenido" tabindex="-1">
   <section class="portada" aria-labelledby="titulo">
     <h1 id="titulo"><Texto texto={contenido.nombre} /></h1>
     <p class="titular"><Texto texto={contenido.titular} /></p>
@@ -65,6 +65,10 @@
   }
   .saltar:focus {
     top: var(--espacio-2);
+  }
+  /* main solo recibe foco por script (skip-link): no es interactivo, no necesita contorno. */
+  main:focus-visible {
+    outline: none;
   }
   .cabecera {
     position: sticky;
