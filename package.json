@@ -12,6 +12,7 @@
     "format:check": "prettier --check .",
     "typecheck": "svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest run",
+    "comprobar-marcadores": "node scripts/comprobar-marcadores.mjs",
     "e2e": "playwright test",
     "validate": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run build && npm run e2e"
   },
