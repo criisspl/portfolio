@@ -15,11 +15,40 @@ function metadatos(): Plugin {
   };
 }
 
+// GitHub Pages no permite cabeceras: la CSP va en un meta, solo en el build (Vite en dev inyecta código en línea).
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self'",
+  "img-src 'self' data:",
+  "font-src 'self'",
+  "object-src 'none'",
+  "base-uri 'none'",
+  "form-action 'none'"
+].join("; ");
+
+function csp(): Plugin {
+  return {
+    name: "csp",
+    apply: "build",
+    transformIndexHtml: {
+      order: "post",
+      handler: () => [
+        {
+          tag: "meta",
+          attrs: { "http-equiv": "Content-Security-Policy", content: CSP },
+          injectTo: "head-prepend"
+        }
+      ]
+    }
+  };
+}
+
 export default defineConfig({
   // Absoluta: así los recursos también cargan desde 404.html en rutas anidadas.
   // Si cambia el nombre del repo o se añade un dominio propio, cambiar aquí.
   base: "/portfolio/",
-  plugins: [svelte(), metadatos()],
+  plugins: [svelte(), metadatos(), csp()],
   build: {
     target: ["es2020", "safari15", "chrome90", "firefox94", "edge90"]
   },

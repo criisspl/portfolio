@@ -15,7 +15,8 @@
   <h3>{proyecto.nombre}</h3>
   <p>{proyecto.descripcion}</p>
   <ul class="etiquetas" aria-label="Tecnologías">
-    {#each proyecto.tecnologias as tecnologia (tecnologia)}
+    <!-- Clave por índice: lista estática y una tecnología repetida haría fallar `each_key_duplicate`. -->
+    {#each proyecto.tecnologias as tecnologia, i (i)}
       <li>{tecnologia}</li>
     {/each}
   </ul>
