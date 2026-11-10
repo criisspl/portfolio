@@ -28,6 +28,7 @@
   --texto-xs: 0.8rem;
   --texto-md: 1rem;
   --texto-lg: 1.125rem;
+  --espaciado-letras: 0.05em; /* mayúsculas del menú */
 
   --espacio-1: 0.25rem;
   --espacio-2: 0.5rem;
@@ -41,9 +42,9 @@
   --espacio-fino: 0.4rem; /* holgura de los marcadores y filas de contacto (fuera de la escala de 4px) */
 
   --ancho-max: 48rem;
-  /* Margen de anclas bajo la cabecera fija. En móvil, con la fuente pixel a 16px, el menú no cabe
-     en una fila (400px > 390px) y pasa a dos (cabecera de 100px): se reserva más margen. */
-  --alto-cabecera: 7rem;
+  /* Margen de anclas bajo la cabecera fija: el menú va en una sola fila (enlace de --toque-min
+     más el relleno de la lista y el borde), 56px = 3.5rem en móvil y escritorio. */
+  --alto-cabecera: 3.5rem;
   --grosor-borde: 4px;
   --grosor-fino: 2px;
   --sombra-pixel: 6px 6px 0 var(--borde);
@@ -60,7 +61,6 @@
   :root {
     --titulo-1: var(--pixel-l);
     --titulo-2: var(--pixel-m);
-    --alto-cabecera: 4.5rem;
   }
 }
 
