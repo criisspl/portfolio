@@ -3,8 +3,8 @@
 import type { Contenido } from "../lib/tipos.ts";
 
 export const contenido = {
-  nombre: "TODO: tu nombre",
-  titular: "TODO: tu titular (una frase sobre lo que haces)",
+  nombre: "Cristina Santos",
+  titular: "Desarrolladora frontend",
   sobreMi: ["TODO: primer párrafo sobre ti", "TODO: segundo párrafo (trayectoria, intereses…)"],
   proyectos: [
     {
