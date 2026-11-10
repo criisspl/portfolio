@@ -9,8 +9,8 @@ function metadatos(): Plugin {
     name: "metadatos",
     transformIndexHtml(html) {
       return html
-        .replaceAll("__TITULO__", escaparHtml(tituloDe(contenido)))
-        .replaceAll("__DESCRIPCION__", escaparHtml(descripcionDe(contenido)));
+        .replace(/__TITULO__/g, escaparHtml(tituloDe(contenido)))
+        .replace(/__DESCRIPCION__/g, escaparHtml(descripcionDe(contenido)));
     }
   };
 }

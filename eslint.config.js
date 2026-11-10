@@ -6,7 +6,7 @@ import svelte from "eslint-plugin-svelte";
 export default [
   { ignores: ["dist/", "coverage/", "test-results/", "playwright-report/"] },
   js.configs.recommended,
-  ...tseslint.configs.recommended.map((c) => ({ ...c, files: ["**/*.ts", "**/*.svelte"] })),
+  ...tseslint.configs.strict.map((c) => ({ ...c, files: ["**/*.ts", "**/*.svelte"] })),
   ...svelte.configs.recommended,
   {
     files: ["**/*.svelte", "**/*.svelte.ts"],

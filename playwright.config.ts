@@ -10,7 +10,7 @@ export default defineConfig({
   use: { baseURL: "http://localhost:4173/portfolio/", trace: "on-first-retry", locale: "es-ES" },
   projects: [{ name: "movil", use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } } }],
   webServer: {
-    command: "npm run build && npm run preview",
+    command: "npm run preview",
     url: "http://localhost:4173/portfolio/",
     reuseExistingServer: !process.env.CI
   }

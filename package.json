@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/copiar-404.mjs",
@@ -10,11 +13,11 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "svelte-check --tsconfig ./tsconfig.json",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json --fail-on-warnings",
     "test": "vitest run",
     "comprobar-marcadores": "node scripts/comprobar-marcadores.mjs",
-    "e2e": "playwright test",
-    "validate": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run build && npm run e2e"
+    "e2e": "npm run build && playwright test",
+    "validate": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run e2e"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
