@@ -1,0 +1,58 @@
+@import "./fuentes.css";
+
+:root {
+  --fondo: #14102b;
+  --panel: #1f1a42;
+  --texto: #f2eefc;
+  --suave: #c3bbe6;
+  --acento: #ffd23f;
+  --borde: #8f7bff;
+  --aviso: #ff9ec7;
+  --pixel: "Press Start 2P", "DotGothic16", monospace;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 1rem/1.7 var(--mono);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--pixel);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--acento);
+}
+
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
