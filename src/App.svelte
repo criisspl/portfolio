@@ -86,7 +86,7 @@
   nav a {
     display: inline-block;
     font-family: var(--pixel);
-    font-size: var(--pixel-s);
+    font-size: 0.75rem;
     min-height: var(--toque-min);
     line-height: var(--toque-min);
     padding: 0 var(--espacio-1);
