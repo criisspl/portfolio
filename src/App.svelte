@@ -56,40 +56,40 @@
 <style>
   .saltar {
     position: absolute;
-    left: 0.5rem;
-    top: -4rem;
+    left: var(--espacio-2);
+    top: calc(var(--espacio-16) * -1);
     background: var(--acento);
     color: var(--fondo);
-    padding: 0.75rem 1rem;
+    padding: var(--espacio-3) var(--espacio-4);
     z-index: 10;
   }
   .saltar:focus {
-    top: 0.5rem;
+    top: var(--espacio-2);
   }
   .cabecera {
     position: sticky;
     top: 0;
     z-index: 5;
     background: var(--fondo);
-    border-bottom: 4px solid var(--borde);
+    border-bottom: var(--grosor-borde) solid var(--borde);
   }
   nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 0 0.25rem;
+    gap: 0 var(--espacio-1);
     list-style: none;
     margin: 0 auto;
-    max-width: 48rem;
-    padding: 0.25rem 0.5rem;
+    max-width: var(--ancho-max);
+    padding: var(--espacio-1) var(--espacio-2);
   }
   nav a {
     display: inline-block;
     font-family: var(--pixel);
-    font-size: 0.75rem;
-    min-height: 44px;
-    line-height: 44px;
-    padding: 0 0.25rem;
+    font-size: var(--pixel-s);
+    min-height: var(--toque-min);
+    line-height: var(--toque-min);
+    padding: 0 var(--espacio-1);
     text-decoration: none;
   }
   nav a:hover {
@@ -97,35 +97,30 @@
   }
   main {
     margin: 0 auto;
-    max-width: 48rem;
-    padding: 0 1rem;
+    max-width: var(--ancho-max);
+    padding: 0 var(--espacio-4);
   }
   .portada {
-    padding: 3rem 0 2rem;
+    padding: var(--espacio-12) 0 var(--espacio-8);
   }
   h1 {
     color: var(--acento);
-    font-size: 1.25rem;
+    font-size: var(--titulo-1);
     overflow-wrap: anywhere;
   }
   .titular {
     color: var(--suave);
-    font-size: 1.125rem;
+    font-size: var(--texto-lg);
   }
   .proyectos {
     display: grid;
-    gap: 1.5rem;
+    gap: var(--espacio-6);
   }
   footer {
-    border-top: 4px solid var(--borde);
+    border-top: var(--grosor-borde) solid var(--borde);
     color: var(--suave);
-    font-size: 0.8rem;
-    padding: 1.5rem 1rem;
+    font-size: var(--texto-xs);
+    padding: var(--espacio-6) var(--espacio-4);
     text-align: center;
-  }
-  @media (min-width: 40rem) {
-    h1 {
-      font-size: 1.75rem;
-    }
   }
 </style>

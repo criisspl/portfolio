@@ -31,7 +31,7 @@
     padding: 0;
   }
   .contactos li {
-    padding: 0.4rem 0;
+    padding: var(--espacio-fino) 0;
   }
   .etiqueta {
     color: var(--suave);

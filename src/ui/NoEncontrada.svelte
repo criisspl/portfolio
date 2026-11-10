@@ -15,7 +15,7 @@
 <style>
   .pagina {
     margin: 0 auto;
-    max-width: 48rem;
-    padding: 4rem 1rem;
+    max-width: var(--ancho-max);
+    padding: var(--espacio-16) var(--espacio-4);
   }
 </style>

@@ -53,6 +53,8 @@ export default defineConfig({
     target: ["es2020", "safari15", "chrome90", "firefox94", "edge90"]
   },
   test: {
-    include: ["test/**/*.test.ts"]
+    include: ["test/**/*.test.ts"],
+    // El test de tokens lee estilos.css en crudo; por defecto Vitest vacía el CSS.
+    css: { include: [/estilos\.css/] }
   }
 });
