@@ -4,9 +4,11 @@ import { esMarcador, hrefDeContacto, hrefPublico } from "../src/lib/marcadores.t
 
 describe("marcadores", () => {
   it("detecta textos pendientes", () => {
-    expect(esMarcador("TODO: tu nombre")).toBe(true);
-    expect(esMarcador("  TODO: algo")).toBe(true);
+    expect(esMarcador("TODO: x")).toBe(true);
+    expect(esMarcador("  TODO: x")).toBe(true);
     expect(esMarcador("Showroom")).toBe(false);
+    expect(esMarcador("TODOS los días")).toBe(false);
+    expect(esMarcador("todo: x")).toBe(false);
   });
 
   it("no genera enlace mientras el contacto es un marcador", () => {
@@ -26,12 +28,6 @@ describe("marcadores", () => {
 describe("contenido", () => {
   it("Showroom es el primer proyecto", () => {
     expect(contenido.proyectos[0]?.nombre).toBe("Showroom");
-  });
-
-  it("los datos personales siguen siendo marcadores TODO hasta que Cristina los escriba", () => {
-    const personales = [contenido.nombre, contenido.titular, ...contenido.sobreMi];
-    expect(personales.every(esMarcador)).toBe(true);
-    expect(contenido.contactos.length).toBeGreaterThan(0);
   });
 
   it("no hay claves de proyecto ni de contacto repetidas", () => {

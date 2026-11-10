@@ -1,4 +1,4 @@
-// Único fichero con textos personales. Todo lo que empieza por «TODO» está pendiente de que Cristina
+// Único fichero con textos personales. Todo lo que empieza por «TODO:» está pendiente de que Cristina
 // lo escriba: no se inventa nada sobre ella. Al sustituir un marcador, la web lo muestra como texto normal.
 import type { Contenido } from "../lib/tipos.ts";
 

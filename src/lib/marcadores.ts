@@ -1,10 +1,10 @@
 import type { Contacto } from "./tipos.ts";
 
-const PREFIJO = "TODO";
+const PATRON = /^\s*TODO:/;
 
-/** Un marcador es un texto pendiente de rellenar por la persona dueña del portfolio. */
+/** Un marcador es un texto pendiente de rellenar: empieza (tras espacios) por `TODO:` en mayúsculas. */
 export function esMarcador(texto: string): boolean {
-  return texto.trimStart().startsWith(PREFIJO);
+  return PATRON.test(texto);
 }
 
 /** Enlace de un contacto, o `null` si el valor aún es un marcador. */

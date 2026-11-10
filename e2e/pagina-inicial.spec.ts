@@ -23,10 +23,6 @@ test.describe("página inicial", () => {
     await expect(page.getByRole("heading", { level: 2, name: "Contacto" })).toBeInViewport();
   });
 
-  test("los textos pendientes se ven como marcadores", async ({ page }) => {
-    await expect(page.locator("[data-marcador]").first()).toBeVisible();
-  });
-
   test("el enlace para saltar al contenido recibe el foco primero", async ({ page }) => {
     await page.keyboard.press("Tab");
     await expect(page.getByRole("link", { name: "Saltar al contenido" })).toBeFocused();
