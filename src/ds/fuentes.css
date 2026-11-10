@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./fuentes/press-start-2p-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./fuentes/jetbrains-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DotGothic16";
+  src: url("./fuentes/dotgothic16-kanji.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
