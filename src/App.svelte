@@ -85,8 +85,11 @@
   }
   nav a {
     display: inline-block;
-    font-family: var(--pixel);
-    font-size: 0.75rem;
+    font-family: var(--mono);
+    font-size: var(--texto-xs);
+    font-weight: 500;
+    letter-spacing: var(--espaciado-letras);
+    text-transform: uppercase;
     min-height: var(--toque-min);
     line-height: var(--toque-min);
     padding: 0 var(--espacio-1);
