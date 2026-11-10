@@ -23,6 +23,13 @@ describe("marcadores", () => {
     expect(hrefPublico("TODO: enlace")).toBeNull();
     expect(hrefPublico("https://ejemplo.dev")).toBe("https://ejemplo.dev");
   });
+
+  it("rechaza enlaces que no sean https", () => {
+    expect(hrefPublico("javascript:alert(1)")).toBeNull();
+    expect(hrefPublico("http://ejemplo.dev")).toBeNull();
+    expect(hrefPublico("data:text/html,x")).toBeNull();
+    expect(hrefPublico("ejemplo.dev")).toBeNull();
+  });
 });
 
 describe("contenido", () => {

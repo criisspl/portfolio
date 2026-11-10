@@ -12,7 +12,12 @@ export function hrefDeContacto(contacto: Contacto): string | null {
   return esMarcador(contacto.valor) ? null : `${contacto.prefijo}${contacto.valor}`;
 }
 
-/** Enlace público de un proyecto, o `null` si aún es un marcador. */
+/** Enlace público de un proyecto, o `null` si es un marcador o no es una URL `https:` válida. */
 export function hrefPublico(enlace: string): string | null {
-  return esMarcador(enlace) ? null : enlace;
+  if (esMarcador(enlace)) return null;
+  try {
+    return new URL(enlace).protocol === "https:" ? enlace : null;
+  } catch {
+    return null;
+  }
 }
