@@ -16,9 +16,5 @@ export function descripcionDe(contenido: Pick<Contenido, "titular">): string {
 
 /** Escapa un texto para usarlo dentro de un atributo o elemento HTML. */
 export function escaparHtml(texto: string): string {
-  return texto
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+  return texto.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
