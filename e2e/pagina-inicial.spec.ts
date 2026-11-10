@@ -57,6 +57,14 @@ test.describe("página inicial", () => {
     await expect(page.getByRole("heading", { level: 2, name: "Contacto", exact: true })).toBeInViewport();
   });
 
+  test("la navegación cabe en una sola fila en móvil", async ({ page }) => {
+    const enlaces = page.getByRole("navigation", { name: "Principal" }).getByRole("link");
+    const tops = await enlaces.evaluateAll((els) =>
+      els.map((el) => Math.round(el.getBoundingClientRect().top))
+    );
+    expect(new Set(tops).size).toBe(1);
+  });
+
   test("el enlace para saltar al contenido recibe el foco primero", async ({ page }) => {
     await page.keyboard.press("Tab");
     await expect(page.getByRole("link", { name: "Saltar al contenido" })).toBeFocused();
