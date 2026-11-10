@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test.describe("página inicial", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/");
+    await page.goto("./");
   });
 
   test("tiene las tres secciones con su encabezado", async ({ page }) => {

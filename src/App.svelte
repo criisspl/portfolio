@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "./ds/estilos.css";
   import { contenido } from "./data/contenido.ts";
   import { hrefDeContacto } from "./lib/marcadores.ts";
   import Proyecto from "./ui/Proyecto.svelte";
