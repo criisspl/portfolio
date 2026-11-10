@@ -16,9 +16,12 @@ test.describe("accesibilidad", () => {
     await page.keyboard.press("Enter");
     await expect(page).toHaveURL(/#contenido$/);
     await expect(page.locator("#contenido")).toBeInViewport();
-    // <main> no es enfocable: el foco se queda en el enlace (o en body), nunca salta a la cabecera.
-    const activo = await page.evaluate(() => document.activeElement?.tagName);
-    expect(["A", "BODY"]).toContain(activo);
+    // <main tabindex="-1"> recibe el foco: el siguiente Tab sigue desde el contenido, no desde la cabecera.
+    const activo = await page.evaluate(() => {
+      const el = document.activeElement;
+      return `${el?.tagName.toLowerCase()}#${el?.id}`;
+    });
+    expect(activo).toBe("main#contenido");
     await expect(
       page.getByRole("navigation", { name: "Principal" }).getByRole("link").first()
     ).not.toBeFocused();
