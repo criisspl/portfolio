@@ -5,7 +5,10 @@ import type { Contenido } from "../lib/tipos.ts";
 export const contenido = {
   nombre: "Cristina Santos",
   titular: "Desarrolladora frontend",
-  sobreMi: ["TODO: primer párrafo sobre ti", "TODO: segundo párrafo (trayectoria, intereses…)"],
+  sobreMi: [
+    "Hi! I'm a developer with 5+ years of work behind me. Frontend is my happy place, but every now and then I sneak over to the backend just to see how the other half lives.",
+    "My day-to-day is React, Next.js, Vue, Node, PHP, Bash and MySQL. On side projects I play with Python, and I'm currently learning Go. I love picking up new languages and tinkering with code to see how many different ways there are to solve the same problem."
+  ],
   proyectos: [
     {
       nombre: "Showroom",
