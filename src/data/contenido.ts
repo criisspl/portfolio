@@ -16,8 +16,8 @@ export const contenido = {
     }
   ],
   contactos: [
-    { etiqueta: "Correo", valor: "TODO: tu correo", prefijo: "mailto:" },
-    { etiqueta: "GitHub", valor: "TODO: tu usuario de GitHub", prefijo: "https://github.com/" },
-    { etiqueta: "LinkedIn", valor: "TODO: tu perfil de LinkedIn", prefijo: "https://www.linkedin.com/in/" }
+    { etiqueta: "Correo", valor: "santosplazacristina@gmail.com", prefijo: "mailto:" },
+    { etiqueta: "GitHub", valor: "criisspl", prefijo: "https://github.com/" },
+    { etiqueta: "LinkedIn", valor: "cristina-santos-plaza", prefijo: "https://www.linkedin.com/in/" }
   ]
 } satisfies Contenido;
