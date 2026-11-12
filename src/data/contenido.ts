@@ -5,7 +5,10 @@ import type { Contenido } from "../lib/tipos.ts";
 export const contenido = {
   nombre: "Cristina Santos",
   titular: "Desarrolladora frontend",
-  sobreMi: ["TODO: primer párrafo sobre ti", "TODO: segundo párrafo (trayectoria, intereses…)"],
+  sobreMi: [
+    "Soy desarrolladora y llevo más de cinco años trabajando en ello. Lo que más me gusta es el frontend, aunque de vez en cuando cambio al backend: me gusta entender cómo encaja todo.",
+    "Trabajo con React, Next.js, Vue, Node, PHP, Bash y MySQL. En mis proyectos personales uso Python y ahora estoy aprendiendo Go. Disfruto aprendiendo lenguajes nuevos y trasteando con el código para comparar soluciones distintas."
+  ],
   proyectos: [
     {
       nombre: "Showroom",
