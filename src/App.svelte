@@ -32,7 +32,7 @@
   <Seccion id={sobreMi.id} titulo={sobreMi.nombre}>
     <!-- Clave por índice: lista estática y dos párrafos iguales harían fallar `each_key_duplicate`. -->
     {#each contenido.sobreMi as parrafo, i (i)}
-      <p><Texto texto={parrafo} /></p>
+      <p lang="en"><Texto texto={parrafo} /></p>
     {/each}
   </Seccion>
 
