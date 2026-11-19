@@ -30,6 +30,20 @@ export const contenido = {
         "CLI en Python que descarga las imágenes de una URL, audita su accesibilidad (sin alt, alt vacío indebido, alt genérico) y genera texto alt con un modelo de visión local vía Ollama. Claude es opcional.",
       tecnologias: ["Python", "Typer", "httpx", "BeautifulSoup", "Ollama"],
       enlace: "https://github.com/criisspl/pixelalt"
+    },
+    {
+      nombre: "claude-config",
+      descripcion:
+        "Plugin de Claude Code con 16 hooks que frenan force push, push a main, rm -rf peligrosos y secretos en el código, probados en CI contra 309 casos de red-team. Reparte cada tarea entre Opus, Sonnet y Haiku para gastar menos tokens.",
+      tecnologias: ["Shell", "JavaScript", "Python", "GitHub Actions"],
+      enlace: "https://github.com/criisspl/claude-config"
+    },
+    {
+      nombre: "Buscador de ofertas",
+      descripcion:
+        "Subes tu CV en PDF, cuentas qué buscas y la IA puntúa de 0 a 100 las ofertas de trabajo según cómo encajan contigo. Los datos viven solo en el navegador; usa la IA de la app o la tuya, incluido Ollama en local.",
+      tecnologias: ["Next.js", "TypeScript", "Dexie", "Upstash", "Groq", "Ollama"],
+      enlace: "https://github.com/criisspl/buscador-ofertas"
     }
   ],
   contactos: [
