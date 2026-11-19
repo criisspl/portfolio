@@ -15,7 +15,7 @@ export const contenido = {
       descripcion:
         "App web que descubre tu paleta de color, tu tipo de cuerpo y tu estética, guarda tu ropa y monta outfits según la ocasión y el tiempo. Los datos viven solo en el dispositivo; la IA es opcional y pide permiso.",
       tecnologias: ["Svelte 5", "TypeScript", "Vite", "IndexedDB", "Cloudflare Workers"],
-      enlace: "TODO: enlace público a Showroom (el repositorio es privado)"
+      enlace: "https://github.com/criisspl/showroom"
     },
     {
       nombre: "commitcat",
