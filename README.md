@@ -88,7 +88,7 @@ Los tokens están en `src/ds/estilos.css`. Los componentes no usan medidas propi
 
 - Skip-link «Saltar al contenido»: primer foco de la página; mueve el foco a `<main id="contenido" tabindex="-1">`.
 - Decoraciones con `aria-hidden="true"` (por ejemplo, el `>` de los títulos de sección).
-- Paleta oscura con colores definidos como tokens; el contraste no se ha medido con herramienta automática.
+- Paleta oscura con colores definidos como tokens; `test/contraste.test.ts` comprueba que los pares de color de los tokens cumplen WCAG AA (4.5 texto, 3 bordes).
 - `prefers-reduced-motion: reduce` desactiva el scroll suave, las transiciones y las animaciones.
 - Foco visible con `:focus-visible` y dianas táctiles de al menos 44px en la navegación.
 
