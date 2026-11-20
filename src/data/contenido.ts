@@ -15,7 +15,7 @@ export const contenido = {
       descripcion:
         "App web que descubre tu paleta de color, tu tipo de cuerpo y tu estética, guarda tu ropa y monta outfits según la ocasión y el tiempo. Los datos viven solo en el dispositivo; la IA es opcional y pide permiso.",
       tecnologias: ["Svelte 5", "TypeScript", "Vite", "IndexedDB", "Cloudflare Workers"],
-      enlace: "TODO: enlace público a Showroom (el repositorio es privado)"
+      enlace: "https://github.com/criisspl/showroom"
     },
     {
       nombre: "commitcat",
@@ -30,6 +30,27 @@ export const contenido = {
         "CLI en Python que descarga las imágenes de una URL, audita su accesibilidad (sin alt, alt vacío indebido, alt genérico) y genera texto alt con un modelo de visión local vía Ollama. Claude es opcional.",
       tecnologias: ["Python", "Typer", "httpx", "BeautifulSoup", "Ollama"],
       enlace: "https://github.com/criisspl/pixelalt"
+    },
+    {
+      nombre: "claude-config",
+      descripcion:
+        "Plugin de Claude Code con 16 hooks que frenan force push, push a main, rm -rf peligrosos y secretos en el código, probados en CI contra 309 casos de red-team. Reparte cada tarea entre Opus, Sonnet y Haiku para gastar menos tokens.",
+      tecnologias: ["Shell", "JavaScript", "Python", "GitHub Actions"],
+      enlace: "https://github.com/criisspl/claude-config"
+    },
+    {
+      nombre: "Buscador de ofertas",
+      descripcion:
+        "Subes tu CV en PDF, cuentas qué buscas y la IA puntúa de 0 a 100 las ofertas de trabajo según cómo encajan contigo. Los datos viven solo en el navegador; usa la IA de la app o la tuya, incluido Ollama en local.",
+      tecnologias: ["Next.js", "TypeScript", "Dexie", "Upstash", "Groq", "Ollama"],
+      enlace: "https://github.com/criisspl/buscador-ofertas"
+    },
+    {
+      nombre: "Gestor de finanzas",
+      descripcion:
+        "App web de finanzas personales que cada mes compara tus ingresos y gastos con 6 reglas de dinero. Tus datos se cifran en el navegador con una contraseña que solo tú conoces: el servidor guarda un bloque que nadie más puede leer.",
+      tecnologias: ["React 19", "TypeScript", "Vite", "Supabase", "Web Crypto", "Vitest"],
+      enlace: "https://github.com/criisspl/gestor-finanzas"
     }
   ],
   contactos: [
