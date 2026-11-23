@@ -12,9 +12,7 @@ describe("tokens del sistema de diseño", () => {
     }
   );
 
-  it.each(["--pixel-s", "--pixel-m", "--pixel-l"])("%s es múltiplo de 8px (raíz de 16px)", (token) => {
-    const rem = Number.parseFloat(valorDe(token) ?? "");
-    expect(valorDe(token)).toMatch(/rem$/);
-    expect((rem * 16) % 8).toBe(0);
+  it.each(["--titulo-1", "--titulo-2", "--titulo-3", "--texto-md"])("%s está en rem", (token) => {
+    expect(valorDe(token)).toMatch(/^[\d.]+rem$/);
   });
 });

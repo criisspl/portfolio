@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/criisspl/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/criisspl/portfolio/actions/workflows/ci.yml)
 
-Portfolio personal: una web estática en Svelte 5 con estética pixel, publicada en GitHub Pages.
+Portfolio personal: una web estática en Svelte 5 con estética pixel tranquila (Calm Pixel), en inglés, publicada en GitHub Pages.
 
 ## Principios
 
@@ -76,18 +76,17 @@ Para rellenarlo, sustituye la cadena por el texto real. No hace falta tocar nada
 
 Los tokens están en `src/ds/estilos.css`. Los componentes no usan medidas propias, solo estos tokens.
 
-- Tipografía pixel (Press Start 2P): solo múltiplos de 8px (`--pixel-s` 16px, `--pixel-m` 24px, `--pixel-l` 32px), la cuadrícula nativa de la fuente.
-- Tipografía mono (JetBrains Mono): `--texto-xs`, `--texto-md`, `--texto-lg`.
-- Espacio: base de 0.25rem (4px), `--espacio-N` con N en 1, 2, 3, 4, 5, 6, 8, 12 y 16.
+- Tipografía: Inter (cuerpo, 17px) y JetBrains Mono (títulos y menú). Tamaños: `--titulo-1/2/3`, `--texto-xs/sm/md/lg`.
+- Espacio: base de 0.25rem (4px), `--espacio-N` con N en 1, 2, 3, 4, 5, 6, 7, 8, 12, 14 y 16.
 - Borde: `--grosor-borde` 4px y `--grosor-fino` 2px. Sombra: `--sombra-pixel`.
 - Toque mínimo: `--toque-min` 44px.
-- Breakpoint único: 40rem (640px). Solo cambia los tamaños de título (`--titulo-1`, `--titulo-2`); los componentes no llevan media queries.
+- Breakpoint único: 45rem (720px): una columna por debajo. Vive solo en `App.svelte` (las media queries no admiten `var()`).
 - Fuentes locales en `src/ds/fuentes/` (woff2), con sus licencias OFL en `src/ds/fuentes/licencias/`.
 
 ## Accesibilidad
 
-- Skip-link «Saltar al contenido»: primer foco de la página; mueve el foco a `<main id="contenido" tabindex="-1">`.
-- Decoraciones con `aria-hidden="true"` (por ejemplo, el `>` de los títulos de sección).
+- Skip-link «Skip to content»: primer foco de la página; mueve el foco a `<main id="contenido" tabindex="-1">`.
+- Decoraciones con `aria-hidden="true"` (por ejemplo, los iconos de los títulos y la flecha ↗ de los enlaces externos).
 - Paleta oscura con colores definidos como tokens; `test/contraste.test.ts` comprueba que los pares de color de los tokens cumplen WCAG AA (4.5 texto, 3 bordes).
 - `prefers-reduced-motion: reduce` desactiva el scroll suave, las transiciones y las animaciones.
 - Foco visible con `:focus-visible` y dianas táctiles de al menos 44px en la navegación.
@@ -121,7 +120,7 @@ Notas de despliegue:
 
 - Una PR por cambio, desde una rama `feature/<nombre>`.
 - Conventional Commits.
-- Textos de la web y comentarios en español.
+- Textos de la web en inglés; comentarios en español.
 - No añadir dependencias sin consultarlo.
 - Ejecutar `npm run validate` antes de dar algo por hecho.
 

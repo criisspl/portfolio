@@ -7,7 +7,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : "list",
-  use: { baseURL: "http://localhost:4173/portfolio/", trace: "on-first-retry", locale: "es-ES" },
+  use: { baseURL: "http://localhost:4173/portfolio/", trace: "on-first-retry", locale: "en-US" },
   projects: [
     { name: "movil", use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } } },
     { name: "escritorio", use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 800 } } }

@@ -7,39 +7,39 @@ test.describe("página inicial", () => {
 
   test("tiene las tres secciones con su encabezado", async ({ page }) => {
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    for (const nombre of ["Sobre mí", "Proyectos", "Contacto"]) {
+    for (const nombre of ["About me", "Projects", "Contact"]) {
       await expect(page.getByRole("heading", { level: 2, name: nombre, exact: true })).toBeVisible();
     }
   });
 
   test("esqueleto de la página (sin depender de los datos personales)", async ({ page }) => {
     await expect(page.locator("body")).toMatchAriaSnapshot(`
-      - link "Saltar al contenido"
+      - link "Skip to content"
       - banner:
-        - navigation "Principal":
+        - navigation "Main":
           - list:
             - listitem:
-              - link "Sobre mí"
+              - link "About me"
             - listitem:
-              - link "Proyectos"
+              - link "Projects"
             - listitem:
-              - link "Contacto"
+              - link "Contact"
       - main:
         - region /.+/:
           - heading /.+/ [level=1]
           - paragraph
-        - region "Sobre mí":
-          - heading "Sobre mí" [level=2]
+        - region "About me":
+          - heading "About me" [level=2]
           - paragraph
-        - region "Proyectos":
-          - heading "Proyectos" [level=2]
+        - region "Projects":
+          - heading "Projects" [level=2]
           - article:
             - heading "Showroom" [level=3]
             - paragraph
-            - list "Tecnologías"
+            - list "Technologies"
             - paragraph
-        - region "Contacto":
-          - heading "Contacto" [level=2]
+        - region "Contact":
+          - heading "Contact" [level=2]
           - list:
             - listitem: /.+/
       - contentinfo
@@ -52,9 +52,9 @@ test.describe("página inicial", () => {
   });
 
   test("la navegación lleva a cada sección", async ({ page }) => {
-    await page.getByRole("navigation", { name: "Principal" }).getByRole("link", { name: "Contacto" }).click();
-    await expect(page).toHaveURL(/#contacto$/);
-    await expect(page.getByRole("heading", { level: 2, name: "Contacto", exact: true })).toBeInViewport();
+    await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Contact" }).click();
+    await expect(page).toHaveURL(/#contact$/);
+    await expect(page.getByRole("heading", { level: 2, name: "Contact", exact: true })).toBeInViewport();
   });
 
   test("no carga recursos de otros orígenes", async ({ page }) => {

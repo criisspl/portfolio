@@ -5,12 +5,12 @@ test.describe("layout", () => {
     await page.goto("./");
   });
 
-  test("la navegación cabe en una sola fila", async ({ page }) => {
-    const enlaces = page.getByRole("navigation", { name: "Principal" }).getByRole("link");
+  test("la navegación cabe en una fila en móvil y es una columna en escritorio", async ({ page }, info) => {
+    const enlaces = page.getByRole("navigation", { name: "Main" }).getByRole("link");
     const tops = await enlaces.evaluateAll((els) =>
       els.map((el) => Math.round(el.getBoundingClientRect().top))
     );
-    expect(new Set(tops).size).toBe(1);
+    expect(new Set(tops).size).toBe(info.project.name === "movil" ? 1 : tops.length);
   });
 
   test("no hay desbordamiento horizontal", async ({ page }) => {

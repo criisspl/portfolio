@@ -8,8 +8,8 @@
 
 <main class="pagina">
   <h1>404</h1>
-  <p>Esta página no existe.</p>
-  <p><a href={inicio}>Volver al inicio</a></p>
+  <p>This page doesn't exist.</p>
+  <p><a href={inicio}>Back to home</a></p>
 </main>
 
 <style>

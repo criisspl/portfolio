@@ -17,11 +17,16 @@ describe("Proyecto.svelte", () => {
     expect(body).toContain("Demo");
     expect(body).toContain("Una demo");
     expect(body).toContain("<li");
+    expect(body).toContain('aria-label="Technologies"');
     expect(body).toContain("TypeScript");
   });
 
   it("enlaza solo cuando hay una URL https real", () => {
-    expect(render(Proyecto, { props: { proyecto } }).body).toContain('href="https://ejemplo.dev"');
+    const enlazado = render(Proyecto, { props: { proyecto } }).body;
+    expect(enlazado).toContain('href="https://ejemplo.dev"');
+    expect(enlazado).toContain('target="_blank"');
+    expect(enlazado).toContain('rel="noopener noreferrer"');
+    expect(enlazado).toContain("View Demo on GitHub");
     const pendiente = render(Proyecto, { props: { proyecto: { ...proyecto, enlace: "TODO: enlace" } } }).body;
     expect(pendiente).not.toContain("<a ");
     expect(pendiente).toContain("data-marcador");

@@ -12,7 +12,7 @@ test("la CSP está en el build y la página funciona sin violaciones", async ({ 
     /default-src 'self'.*script-src 'self'/
   );
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  const fuente = await page.evaluate(() => document.fonts.check('16px "Press Start 2P"'));
+  const fuente = await page.evaluate(() => document.fonts.check('700 16px "JetBrains Mono"'));
   expect(fuente).toBe(true);
   expect(errores).toEqual([]);
 });
