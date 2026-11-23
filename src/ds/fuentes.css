@@ -1,12 +1,24 @@
 @font-face {
-  font-family: "Press Start 2P";
-  src: url("./fuentes/press-start-2p-400.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("./fuentes/inter-400.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
+  font-family: "Inter";
+  src: url("./fuentes/inter-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
   font-family: "JetBrains Mono";
-  src: url("./fuentes/jetbrains-mono-400.woff2") format("woff2");
-  font-weight: 400;
+  src: url("./fuentes/jetbrains-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./fuentes/jetbrains-mono-700.woff2") format("woff2");
+  font-weight: 700;
   font-display: swap;
 }

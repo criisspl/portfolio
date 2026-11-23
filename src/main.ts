@@ -15,7 +15,7 @@ if (esPortada(location.pathname, base)) {
   destino.replaceChildren();
   mount(App, { target: destino });
 } else {
-  document.title = "Página no encontrada";
+  document.title = "Page not found";
   destino.replaceChildren(); // por si el servidor entregó la portada prerenderizada
   mount(NoEncontrada, { target: destino, props: { inicio: base } });
 }

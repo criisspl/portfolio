@@ -2,7 +2,7 @@ import { esMarcador } from "./marcadores.ts";
 import type { Contenido } from "./tipos.ts";
 
 const TITULO_GENERICO = "Portfolio";
-const DESCRIPCION_GENERICA = "Portfolio personal: sobre mí, proyectos y contacto.";
+const DESCRIPCION_GENERICA = "Personal portfolio: about me, projects and contact.";
 
 /** Título de la pestaña: el nombre real, o uno genérico mientras sea un marcador. */
 export function tituloDe(contenido: Pick<Contenido, "nombre">): string {

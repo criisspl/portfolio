@@ -6,7 +6,7 @@ test.describe("accesibilidad", () => {
   }) => {
     await page.goto("./");
     await page.keyboard.press("Tab");
-    const saltar = page.getByRole("link", { name: "Saltar al contenido" });
+    const saltar = page.getByRole("link", { name: "Skip to content" });
     await expect(saltar).toBeFocused();
     await expect(saltar).toBeInViewport({ ratio: 1 });
     const caja = await saltar.boundingBox();
@@ -22,9 +22,7 @@ test.describe("accesibilidad", () => {
       return `${el?.tagName.toLowerCase()}#${el?.id}`;
     });
     expect(activo).toBe("main#contenido");
-    await expect(
-      page.getByRole("navigation", { name: "Principal" }).getByRole("link").first()
-    ).not.toBeFocused();
+    await expect(page.getByRole("navigation", { name: "Main" }).getByRole("link").first()).not.toBeFocused();
   });
 
   test("con prefers-reduced-motion: reduce no hay scroll suave, transiciones ni animaciones", async ({

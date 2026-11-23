@@ -23,5 +23,5 @@ Portfolio personal de Cristina. Web estática (GitHub Pages), sin backend. Cada 
 - Móvil primero (390x844) y accesible (semántica, contraste, foco visible, `prefers-reduced-motion`).
 - Textos personales solo en el fichero de datos; los que faltan son marcadores `TODO`. No inventar nada sobre Cristina.
 - Una PR por cambio, rama `feature/<nombre>`, Conventional Commits.
-- Textos de la web y comentarios en español.
+- Textos de la web en inglés; comentarios en español.
 - No añadas dependencias sin preguntar.
